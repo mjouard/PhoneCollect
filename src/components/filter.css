@@ -1,0 +1,18 @@
+.div-filter-type{
+    display: flex;
+    flex-direction: row;
+    font-size: calc(1.2vw + 8px);
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+label{
+    font-size: calc(1vw + 8px);
+}
+
+input {
+    width: 20px;
+    height: 20px;
+  }
+
+

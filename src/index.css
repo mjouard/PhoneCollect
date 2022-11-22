@@ -1,13 +1,148 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --color-grey-primary: #f0f0f0;
+  --color-yellow-primary: goldenrod;   
+  --color-orange-primary: darkorange;
+  --color-green-primary: mediumseagreen;
+  background: #0F1B33;
+}
+ 
+html{
+  font-size: 62.5%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.product-container {
+  min-width: 100%;
+}
+
+@media screen and (min-width: 1200px) {
+  .product-container{
+    display: flex;
+    orientation: row;
+  }
+}
+
+.filter-div{
+  width: 100%;
+}
+
+@media screen and (min-width: 1200px) {
+  .filter-div{
+    width: 500px;
+  }
+}
+
+
+@media screen and (min-width: 1400px) {
+  .App{
+    display: grid;
+    grid-template-columns: 350px 350px 350px;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .App{
+    display: grid;
+    grid-template-columns: 350px 350px;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .App{
+    display: grid;
+    grid-template-columns: 350px;
+    justify-content: center;
+  }
+}
+
+.App-container{
+  font-size: 4rem;
+  text-align: center;
+  color: white;
+  margin-top: 5rem
+}
+.productList{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 5rem;
+}
+
+.productCard{
+  position: relative;
+  background-color: var(--color-grey-primary);
+  margin: 1rem;
+  flex: 1 0 25rem;
+  max-width: 30rem;
+  max-height: 50rem;
+  transition: 0.2s;
+  color: black
+}
+
+.productCard:hover{
+  transform: translateY(-0.5rem);
+  box-shadow: 0.5rem 0.75rem 1.5rem #bbbbbb;
+}
+
+.productImage{
+  margin-top: 2rem;
+  max-width: 100%;
+  height: auto;
+}
+
+.productCard__cart{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 1rem;
+  font-size: 2rem;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.productCard__wishlist{
+  position: absolute;
+  right: 3rem;
+  margin: 1rem;
+  bottom: 0;
+  font-size: 2rem;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.productCard__fastSelling {
+  position: absolute;
+  font-size: 2rem;
+  left: 0;
+  bottom: 0;
+  margin: 1rem;
+  fill: var(--color-orange-primary);
+}
+
+.productCard__content {
+  margin: 2rem;
+  margin-bottom: 4rem;
+}
+
+.productName{
+  font-size: 1.5rem;
+}
+
+.displayStack__1,
+.displayStack__2{
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.productPrice{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.productSales,
+.productTime{
+  font-size: 1.1rem;
 }

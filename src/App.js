@@ -1,25 +1,59 @@
-import logo from './logo.svg';
-import './App.css';
+import { Products } from './components/products';
+import contents from './content';
+import Filter from './components/filter';
+import React, {useState} from "react"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function singleFilter(products, productType, label){
+    if (productType.length === 0){
+        return products
+    }
+    else{
+        return products.filter(product => productType.includes(product[label]))
+    }
 }
 
-export default App;
+function filterProducts(products, productType, capacity, searchQuery){
+    return searchFilter(singleFilter(singleFilter(products, capacity, "capacity"), productType, "productType"), searchQuery)
+}
+
+function searchFilter(products, searchQuery){
+    if (searchQuery === ""){
+        return products
+    }
+    else{
+        return products.filter(product => product.name.includes(searchQuery))
+    }
+}
+
+
+export default function App() {
+    const [type, setType] = useState([]);
+    const [capacity, setCapacity] = useState([]);
+    const [searchQuery, setSearchQuery] = useState("")
+
+    return(
+        <div className='App-container'>
+          Welcome in Phone Collect
+            <div className='product-container'>
+                <Filter
+                    setType={setType} type={type}
+                    capacity={capacity} setCapacity={setCapacity}
+                    products={contents} searchQuery={searchQuery} setSearchQuery={setSearchQuery}
+                />
+                <div className='App'>
+                {filterProducts(contents, type, capacity, searchQuery).map(contents => (
+                    <Products 
+                        key={contents.id}
+                        image={contents.image}
+                        name={contents.name}
+                        price={contents.price}
+                        capacity={contents.capacity}
+                        timeLeft={contents.timeLeft}
+                        rating={contents.rating}
+                    />
+                ))}
+                </div>
+            </div>
+        </div>
+    )
+}
