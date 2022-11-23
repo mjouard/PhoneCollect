@@ -15,4 +15,14 @@ input {
     height: 20px;
   }
 
+.filter-text{
+margin-top: 0px;
+margin-right: 1em;
+}
+
+@media screen and (max-width: 1200px) {
+    .filter-text{
+        margin-top: calc(4px + 0.1em);
+    }
+  }
 
