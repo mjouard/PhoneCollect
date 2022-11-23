@@ -57,7 +57,7 @@ const ImageSlider = ({ slides }) => {
   const [touchEnd, setTouchEnd] = useState(null)
 
   // the required distance between touchStart and touchEnd to be detected as a swipe
-  const minSwipeDistance = 10 
+  const minSwipeDistance = 30 
 
   const onTouchStart = (e) => {
     setTouchEnd(null) // otherwise the swipe is fired even with usual touch events
