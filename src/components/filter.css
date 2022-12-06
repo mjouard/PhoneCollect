@@ -6,6 +6,10 @@
     justify-content: center;
 }
 
+.div-filter-type label {
+    white-space: nowrap;
+  }
+
 label{
     font-size: calc(1vw + 8px);
 }

@@ -1,6 +1,6 @@
-import { Products } from './components/products';
-import contents from './content';
-import Filter from './components/filter';
+import { Products } from './products';
+import contents from '../content';
+import Filter from './filter';
 import React, {useState} from "react"
 
 function singleFilter(products, productType, label){
@@ -26,7 +26,7 @@ function searchFilter(products, searchQuery){
 }
 
 
-export default function App() {
+export default function Home() {
     const [type, setType] = useState([]);
     const [capacity, setCapacity] = useState([]);
     const [searchQuery, setSearchQuery] = useState("")

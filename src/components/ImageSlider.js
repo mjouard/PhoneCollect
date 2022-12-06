@@ -85,6 +85,8 @@ const ImageSlider = ({ slides }) => {
     setCurrentIndex(newIndex);
   };
   const goToNext = () => {
+    const image = document.getElementById('img-slide');
+    image.classList.add("animate")
     const isLastSlide = currentIndex === slides.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
@@ -106,8 +108,15 @@ const ImageSlider = ({ slides }) => {
           ❱
         </div>
       </div>
-      <div style={slideStylesWidthBackground}>
-        <img onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd} src={slides[currentIndex]} alt="" style={slideStylesWidthBackground}/>
+      <div>
+        <img  onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove} 
+              onTouchEnd={onTouchEnd} 
+              src={slides[currentIndex]} 
+              alt="" 
+              className="slides"
+              id="img-slide"
+              />
       </div>
       <div style={dotsContainerStyles}>
         {slides.map((slide, slideIndex) => (
