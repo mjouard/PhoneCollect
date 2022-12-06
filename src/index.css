@@ -3,7 +3,7 @@
   --color-yellow-primary: goldenrod;   
   --color-orange-primary: darkorange;
   --color-green-primary: mediumseagreen;
-  background: #0F1B33;
+  background: #202124;
 }
  
 html{
@@ -60,7 +60,7 @@ html{
 .App-container{
   font-size: 4rem;
   text-align: center;
-  color: white;
+  color: orange;
   margin-top: 5rem
 }
 .productList{
