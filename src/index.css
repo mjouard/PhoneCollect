@@ -24,6 +24,7 @@ html{
 
 .filter-div{
   width: 100%;
+  margin-top: 7vw;
 }
 
 @media screen and (min-width: 1200px) {
@@ -60,7 +61,7 @@ html{
 .App-container{
   font-size: 4rem;
   text-align: center;
-  color: orange;
+  color: #F9CB72;
   margin-top: 5rem
 }
 .productList{

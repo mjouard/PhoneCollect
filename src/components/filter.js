@@ -27,7 +27,6 @@ function setAutocomplete(value, setSearchQuery){
 export default function Filter(props){
     return(
         <div className="filter-div">
-            <p> Filtrer </p>
             <div className="div-filter-type">
             <Autocomplete
                 disablePortal
