@@ -7,6 +7,7 @@
     "@emotion/styled": "^11.10.5",
     "@material/checkbox": "^14.0.0",
     "@mui/material": "^5.10.14",
+    "@syncfusion/ej2-react-navigations": "^20.3.58",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -16,6 +17,7 @@
     "react-elastic-carousel": "^0.11.5",
     "react-icons": "^4.6.0",
     "react-id-swiper": "^4.0.0",
+    "react-responsive-carousel": "^3.2.23",
     "react-scripts": "5.0.1",
     "react-soundcloud-player": "^1.1.1",
     "swiper": "^8.4.4",
@@ -44,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-router-dom": "^6.4.4"
   }
 }
