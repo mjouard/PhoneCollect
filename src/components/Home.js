@@ -34,6 +34,7 @@ export default function Home() {
     return(
         <div className='App-container'>
           Welcome in Phone Collect
+          <img width={200} src="logo/phone-collect-logo.png" style={{position: "absolute", top: "2%", left: "2%", zIndex: -1}}/>
             <div className='product-container'>
                 <Filter
                     setType={setType} type={type}
