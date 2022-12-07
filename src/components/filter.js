@@ -37,10 +37,10 @@ export default function Filter(props){
                 onChange={(event, value) => {setAutocomplete(value, props.setSearchQuery)}}
                 renderInput={(params) => 
                     <TextField
-                        sx={{ input: { color: 'white', fontSize: 16 } ,
+                        sx={{ input: { color: 'black', fontSize: 16 } ,
                             "& .MuiOutlinedInput-root": {
                                 "& > fieldset": {
-                                    border: "2px solid white"
+                                    border: "2px solid black"
                                 }
                             },
                             "& .MuiOutlinedInput-root.Mui-focused": {
@@ -61,7 +61,7 @@ export default function Filter(props){
                         }}
                         {...params} 
                         label="Rechercher"
-                        InputLabelProps={{style: {color: "white", fontSize: 16}}}
+                        InputLabelProps={{style: {color: "black", fontSize: 16}}}
                     />}
             />
             </div>

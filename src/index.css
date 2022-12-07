@@ -3,12 +3,32 @@
   --color-yellow-primary: goldenrod;   
   --color-orange-primary: darkorange;
   --color-green-primary: mediumseagreen;
-  background: #202124;
+  background: #FBFBFB;
+}
+
+body{
+  margin: 0
 }
  
 html{
   font-size: 62.5%;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.app-header{
+  background: #202124;
+  color:#533294;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(3vw + 7px);
+}
+
+.gradient-text-header {
+  background-image: linear-gradient(45deg, #785AB4, #533294);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .product-container {
@@ -61,8 +81,7 @@ html{
 .App-container{
   font-size: 4rem;
   text-align: center;
-  color: #F9CB72;
-  margin-top: 5rem
+  margin-top: 0;
 }
 .productList{
   display: flex;
