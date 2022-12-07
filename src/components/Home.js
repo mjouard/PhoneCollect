@@ -2,6 +2,7 @@ import { Products } from './products';
 import contents from '../content';
 import Filter from './filter';
 import React, {useState} from "react"
+import Header from './common/Header';
 
 function singleFilter(products, productType, label){
     if (productType.length === 0){
@@ -33,10 +34,7 @@ export default function Home() {
 
     return(
         <div className='App-container'>
-        <div className='app-header'>
-          <p className='gradient-text-header'> Welcome in Phone Collect </p>
-          <img src="logo/phone-collect-logo.png" style={{width: "15rem", position: "absolute", top: "0%", left: "0%", }}/>
-        </div>
+        <Header />
             <div className='product-container'>
                 <Filter
                     setType={setType} type={type}

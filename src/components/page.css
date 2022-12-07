@@ -1,0 +1,25 @@
+.home-image-large{
+    max-height: calc(100vh - 15rem);
+    height: calc(100vh - 15rem);
+    width: 100%;
+    overflow: hidden;
+}
+
+.home-image-middle{
+    max-height: calc(100vh - 15rem);
+    height: calc(100vh - 15rem);
+    width: 100%;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1000px) {
+    .home-image-large{
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    .home-image-middle{
+      display: none;
+    }
+  }
