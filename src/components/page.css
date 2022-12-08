@@ -6,6 +6,8 @@
 .home-div-page-2{
   height: 100vh;
   background: linear-gradient(to left,#CAB8E3, #B79DDC);
+  display: flex;
+  justify-content: center;
 }
 
 .home-div-page-3{
