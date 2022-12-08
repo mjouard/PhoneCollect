@@ -50,8 +50,14 @@
     }
   }
 
-  @media screen and (min-width: 800px) {
+  @media screen and (max-width: 800px) {
     .home-image-middle{
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    .home-image-small{
       display: none;
     }
   }
