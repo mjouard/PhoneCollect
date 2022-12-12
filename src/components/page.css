@@ -5,14 +5,14 @@
 
 .home-div-page-2{
   height: 100vh;
-  background: linear-gradient(to left,#CAB8E3, #B79DDC);
+  background: linear-gradient(to left,#FBF8EC, #F5F0DB);
   display: flex;
   justify-content: center;
 }
 
 .home-div-page-3{
   height: 100vh;
-  background: linear-gradient(to left,#AB8ED4, #9774C8);
+  background: linear-gradient(to left,#EEF8F5, #DBF5EE);
 }
 
 .home-image-large{
