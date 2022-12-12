@@ -14,8 +14,12 @@ const arrowStyles = {
 export default function Slider(props){
         return (
             <Carousel 
-            infiniteLoop showThumbs={false} 
+            infiniteLoop
+            showThumbs={false} 
             showStatus={false}
+            showArrows={props.showArrows}
+            autoPlay={props.autoPlay}
+            showIndicators={props.showIndicators}
             renderArrowPrev={(clickHandler, hasPrev, labelPrev) =>
                 hasPrev && (
                     <IoMdArrowDropleft 

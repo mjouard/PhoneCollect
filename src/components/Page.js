@@ -1,5 +1,6 @@
 import "./page.css"
 import {useNavigate} from 'react-router-dom';
+import Slider from "./Slider";
 
 export default function Page(props){
     const navigate = useNavigate();
@@ -8,6 +9,10 @@ export default function Page(props){
       // 👇️ navigate to /products
       navigate('/products');
     };
+
+    const phoneSlides = ["home-2/phone-product-1.jpg", "home-2/phone-product-2.webp"]
+
+    const computerSlides = ["home-2/computer-product-1.jpeg", "home-2/computer-product-2.jpg", "home-2/computer-product-3.jpeg"]
 
 
     return(
@@ -21,11 +26,17 @@ export default function Page(props){
                 </p>
             </div>
             <div className="home-div-page-2">
-                <div 
-                style={{fontSize: 30, cursor: "pointer", backgroundColor: "cyan", width: "30vw", textAlign: "center"}}
-                onClick={navigateToProducts}
-                >
-                    See products
+                <div className="home-page-2-container">
+                    <div style={{fontSize: 30, cursor: "pointer", width: "80%", textAlign: "center", backgroundColor: "orange"}}
+                    onClick={navigateToProducts}>
+                        Voir nos téléphones
+                        <Slider slides={phoneSlides} showArrows={false} autoPlay={true} showIndicators={false}/>
+                    </div>
+                    <div style={{fontSize: 30, cursor: "pointer", width: "80%", textAlign: "center", backgroundColor: "orange"}}
+                    onClick={navigateToProducts}>
+                        Voir nos ordinateurs
+                        <Slider slides={computerSlides} showArrows={false} autoPlay={true} showIndicators={false}/>
+                    </div>    
                 </div>
             </div>
             <div className="home-div-page-3" />
