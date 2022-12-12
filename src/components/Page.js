@@ -15,10 +15,10 @@ export default function Page(props){
         const scrollY = window.scrollY
         const actualPage = Math.round(scrollY/pageHeight)
         if (e.deltaY > minScroll){
-            window.scrollTo({
+            setTimeout(window.scrollTo({
                 top: pageHeight * (actualPage + 1),
                 behavior: 'smooth',
-            });
+            }),100);
         }
         else if (e.deltaY < -minScroll){
             window.scrollTo({
@@ -32,10 +32,10 @@ export default function Page(props){
         var pageHeight = window.innerHeight;
         const scrollY = window.scrollY
         const actualPage = Math.round(scrollY/pageHeight)
-        window.scrollTo({
+        setTimeout(window.scrollTo({
             top: pageHeight * (actualPage + 1),
             behavior: 'smooth',
-        });
+        }),100);
     }
 
     const phoneSlides = ["home-2/phone-product-1.jpg", "home-2/phone-product-2.webp"]
