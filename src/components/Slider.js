@@ -15,7 +15,7 @@ export default function Slider(props){
         return (
             <Carousel 
             infiniteLoop
-            showThumbs={false} 
+            showThumbs={props.showThumbs} 
             showStatus={false}
             showArrows={props.showArrows}
             autoPlay={props.autoPlay}
@@ -35,9 +35,9 @@ export default function Slider(props){
                 )
             }
             >
-                {props.slides.map(image => {
+                {props.slides.map((image, index) => {
                     return (
-                        <div>
+                        <div key={index}>
                             <img src={image} />
                         </div>
                     )

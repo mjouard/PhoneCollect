@@ -1,18 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Home from './components/Home';
-import Page from './components/Page';
+import ProductPage from './components/ProductPage';
+import HomePage from './components/HomePage';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SingleProductPage from './components/pages/SingleProductPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Page />}>
-          <Route index element={<Page />} />
+        <Route path="/" element={<HomePage />}>
+          <Route index element={<HomePage />} />
         </Route>
-        <Route path="products" element={<Home />} />
+        <Route path="products/" element={<ProductPage />} />
+        <Route path="products/:productType" element={<ProductPage />} />
+        <Route path="product/:name/:id" element={<SingleProductPage />} />
       </Routes>
     </BrowserRouter>
 );

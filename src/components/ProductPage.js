@@ -3,12 +3,16 @@ import contents from '../content';
 import Filter from './filter';
 import React, {useState} from "react"
 import Header from './common/Header';
+import { useParams } from 'react-router-dom';
 
 function singleFilter(products, productType, label){
     if (productType.length === 0){
         return products
     }
     else{
+        if (productType[0] == null){
+            return products
+        }
         return products.filter(product => productType.includes(product[label]))
     }
 }
@@ -27,10 +31,14 @@ function searchFilter(products, searchQuery){
 }
 
 
-export default function Home() {
-    const [type, setType] = useState([]);
+export default function ProductPage() {
+    let { productType } = useParams()
+    productType = productType || null
+    console.log(productType)
+    const [type, setType] = useState([productType]);
     const [capacity, setCapacity] = useState([]);
     const [searchQuery, setSearchQuery] = useState("")
+
 
     return(
         <div className='App-container'>
@@ -45,6 +53,7 @@ export default function Home() {
                 {filterProducts(contents, type, capacity, searchQuery).map(contents => (
                     <Products 
                         key={contents.id}
+                        id={contents.id}
                         image={contents.image}
                         name={contents.name}
                         price={contents.price}

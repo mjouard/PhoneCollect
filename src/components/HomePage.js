@@ -2,12 +2,12 @@ import "./page.css"
 import {useNavigate} from 'react-router-dom';
 import Slider from "./Slider";
 
-export default function Page(props){
+export default function HomePage(props){
     const navigate = useNavigate();
 
-    const navigateToProducts = () => {
+    const navigateToProducts = (type) => {
       // 👇️ navigate to /products
-      navigate('/products');
+      navigate('/products/' + type);
     };
 
     function wheel(e, minScroll){
@@ -15,10 +15,10 @@ export default function Page(props){
         const scrollY = window.scrollY
         const actualPage = Math.round(scrollY/pageHeight)
         if (e.deltaY > minScroll){
-            setTimeout(window.scrollTo({
+            window.scrollTo({
                 top: pageHeight * (actualPage + 1),
                 behavior: 'smooth',
-            }),100);
+            });
         }
         else if (e.deltaY < -minScroll){
             window.scrollTo({
@@ -32,10 +32,10 @@ export default function Page(props){
         var pageHeight = window.innerHeight;
         const scrollY = window.scrollY
         const actualPage = Math.round(scrollY/pageHeight)
-        setTimeout(window.scrollTo({
+        window.scrollTo({
             top: pageHeight * (actualPage + 1),
             behavior: 'smooth',
-        }),100);
+        });
     }
 
     const phoneSlides = ["home-2/phone-product-1.jpg", "home-2/phone-product-2.webp"]
@@ -53,14 +53,14 @@ export default function Page(props){
             <div className="home-div-page-2">
                 <div className="home-page-2-container">
                     <div style={{fontSize: 30, cursor: "pointer", width: "80%", textAlign: "center", backgroundColor: "orange"}}
-                    onClick={navigateToProducts}>
+                    onClick={() => navigateToProducts("phone")}>
                         Voir nos téléphones
-                        <Slider slides={phoneSlides} showArrows={false} autoPlay={true} showIndicators={false}/>
+                        <Slider slides={phoneSlides} showArrows={false} autoPlay={true} showIndicators={false} showThumbs={false}/>
                     </div>
                     <div style={{fontSize: 30, cursor: "pointer", width: "80%", textAlign: "center", backgroundColor: "orange"}}
-                    onClick={navigateToProducts}>
+                    onClick={() => navigateToProducts("computer")}>
                         Voir nos ordinateurs
-                        <Slider slides={computerSlides} showArrows={false} autoPlay={true} showIndicators={false}/>
+                        <Slider slides={computerSlides} showArrows={false} autoPlay={true} showIndicators={false} showThumbs={false}/>
                     </div>    
                 </div>
             </div>

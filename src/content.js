@@ -2,7 +2,7 @@ const productData = [
     {
       id: 1,
       name: "Huawei p40 pro",
-      image:["p40pro.jpeg", "p40pro 1.jpeg", "p40pro 2.jpeg"],
+      image:["/p40pro.jpeg", "/p40pro 1.jpeg", "/p40pro 2.jpeg"],
       productType: "phone",
       price: 220,
       rating: 5,
@@ -13,7 +13,7 @@ const productData = [
       id: 2,
       name: "MACBOOK AIR 2020",
       image:
-        ["macbookair2020.jpeg", "macbookair2020 2.jpeg"],
+        ["/macbookair2020.jpeg", "/macbookair2020 2.jpeg"],
       productType: "computer",
       price: 169,
       rating: 5,
@@ -24,7 +24,7 @@ const productData = [
       id: 3,
       name: "Samsung Galaxy S21",
       image:
-        ["/s21.jpeg", "s21 2.jpeg"],
+        ["/s21.jpeg", "/s21 2.jpeg"],
       productType: "phone",
       price: 170,
       rating: 4,
