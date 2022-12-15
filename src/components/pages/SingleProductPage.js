@@ -3,6 +3,7 @@ import Header from "../common/Header"
 import contents from "../../content"
 import Slider from "../Slider"
 import "./singleproductpage.css"
+import { GrStorage } from "react-icons/gr"
 
 export default function SingleProductPage(props){
     let { id } = useParams()
@@ -17,7 +18,10 @@ export default function SingleProductPage(props){
                     </div>
                 </div>
                 <div className="product-data-container">
-                    Coucou
+                    <p className="single-product-title"> {product.name} </p>
+                    <GrStorage />
+                    <p> {product.capacity} GO</p>
+                    <button className="buy-button"> Ajouter au panier </button>
                 </div>
             </div>
         </div>

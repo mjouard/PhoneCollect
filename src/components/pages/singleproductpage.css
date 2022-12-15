@@ -15,6 +15,27 @@
 
 .product-data-container{
     width: 50%;
+    text-align: center;
+}
+
+.single-product-title{
+    font-size: calc(5px + 2vw);
+    font-weight: bold;
+}
+
+.buy-button{
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 10px;
+    font-size: calc(5px + 2vw);
+    font-weight: bold;
+    height: 60px;
+    background-color: black;
+    color: white
+}
+
+.buy-button:hover{
+    background-color: #251E05;
 }
 
 @media screen and (max-width: 800px) {
@@ -23,6 +44,9 @@
         flex-direction: column;
     }
     .product-slider-container{
+        width: 100%;
+    }
+    .product-data-container{
         width: 100%;
     }
   }
