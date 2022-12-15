@@ -66,17 +66,6 @@ export default function Filter(props){
             />
             </div>
             <div className="div-filter-type">
-                <p className="filter-text">Appareil</p>
-                <div>
-                    <input type="checkbox" id="phone" name="phone" onChange={(event) => setElement(event, props.type, props.setType)}/>
-                    <label for="phone">Téléphone</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="computer" name="computer" onChange={(event) => setElement(event, props.type, props.setType)}/>
-                    <label for="computer">Ordinateur</label>
-                </div>
-            </div>
-            <div className="div-filter-type">
                 <p className="filter-text">Capacité</p> 
                 <div>
                     <input type="checkbox" id={64} name="64" onChange={(event) => setElement(event, props.capacity, props.setCapacity)}/>

@@ -45,7 +45,6 @@ export default function ProductPage() {
         <Header />
             <div className='product-container'>
                 <Filter
-                    setType={setType} type={type}
                     capacity={capacity} setCapacity={setCapacity}
                     products={contents} searchQuery={searchQuery} setSearchQuery={setSearchQuery}
                 />

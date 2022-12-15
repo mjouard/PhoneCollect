@@ -1,0 +1,28 @@
+.single-product-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.product-slider-container{
+    width: 50%;
+}
+
+.product-slider-image{
+    width: 80%;
+    margin: 10px auto;
+}
+
+.product-data-container{
+    width: 50%;
+}
+
+@media screen and (max-width: 800px) {
+    .single-product-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .product-slider-container{
+        width: 100%;
+    }
+  }

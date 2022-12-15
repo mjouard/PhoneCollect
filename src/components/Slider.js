@@ -15,7 +15,8 @@ export default function Slider(props){
         return (
             <Carousel 
             infiniteLoop
-            showThumbs={props.showThumbs} 
+            showThumbs={props.showThumbs}
+            thumbWidth= "10%"
             showStatus={false}
             showArrows={props.showArrows}
             autoPlay={props.autoPlay}
