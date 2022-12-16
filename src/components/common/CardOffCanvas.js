@@ -22,7 +22,7 @@ export default function CardOffCanvas() {
       <div style={{position: 'absolute', right: "15px", top: "2%", fontSize: "25px"}}>
             {list().length}
       </div>
-      <Offcanvas placement='end' show={show} onHide={handleClose}>
+      <Offcanvas placement='end' show={show} onHide={handleClose} style={{width: "60%"}}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Votre panier</Offcanvas.Title>
         </Offcanvas.Header>
@@ -32,7 +32,7 @@ export default function CardOffCanvas() {
                 <div>  <AiFillDelete onClick={ () => deleteProduct(product.id, setCart)}/> {product.name} {product.price}€</div>
             )
           })}
-          <p> {total()}€ </p>
+          <button style={{width: "70%", marginTop: "10px", borderRadius: "5px", backgroundColor: "black", color: "white"}} > Payer {total()}€ </button>
         </Offcanvas.Body>
       </Offcanvas>
     </>
