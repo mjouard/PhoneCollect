@@ -49,6 +49,9 @@ export default function HomePage(props){
                 <p className="text-home-page-1">
                     Phone Collect
                 </p>
+                <div className="container-image-home">
+                    <img src="/Iphone 12 2.png" className="image-home"/>
+                </div>
             </div>
             <div className="home-div-page-2">
                 <div className="home-page-2-container">

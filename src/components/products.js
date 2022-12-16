@@ -17,9 +17,6 @@ export function Products(props) {
                     <div className='productImage'>
                         <Slider slides={props.image} showThumbs={false} showIndicators={false} showArrows={false}/>
                     </div>
-                <FaShoppingCart className={"productCard__cart"} />
-                <FaRegBookmark className={"productCard__wishlist"} />
-                <FaFireAlt className={"productCard__fastSelling"} />
 
                 <div className='productCard__content'>
                     <div className='displayStack__1'>
