@@ -22,7 +22,7 @@ export default function HomePage(props){
                     Phone Collect
                 </p>
                 <div className="container-image-home">
-                    <img src="/Iphone 12 2.png" className="image-home"/>
+                    <img src="/Iphone 12 2.png" className="image-home" alt=""/>
                 </div>
             </div>
             <div className="home-div-page-2">

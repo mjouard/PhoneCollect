@@ -1,4 +1,3 @@
-import { FaShoppingCart, FaRegBookmark, FaFireAlt } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import Slider from './Slider';
 export function Products(props) {

@@ -4,10 +4,20 @@ import contents from "../../content"
 import Slider from "../Slider"
 import "./singleproductpage.css"
 import { GrStorage } from "react-icons/gr"
+import { add, exists, remove } from 'cart-localstorage' 
+import { useState } from "react"
+
+function addToCart(product, refresh, setRefresh){
+    if (!exists(product.id)){
+        add(product)
+        setRefresh(!refresh)
+    }
+}
 
 export default function SingleProductPage(props){
     let { id } = useParams()
     const product = contents.find(product => product.id === parseInt(id))
+    const [refresh, setRefresh] = useState(exists(product.id))
     return(
         <div>
             <Header />
@@ -21,7 +31,7 @@ export default function SingleProductPage(props){
                     <p className="single-product-title"> {product.name} </p>
                     <GrStorage />
                     <p> {product.capacity} GO</p>
-                    <button className="buy-button"> Ajouter au panier </button>
+                    <button className="buy-button" onClick={ () => addToCart(product, refresh, setRefresh)}> Ajouter au panier </button>
                 </div>
             </div>
         </div>

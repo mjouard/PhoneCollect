@@ -6,7 +6,6 @@ import HomePage from './components/HomePage';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SingleProductPage from './components/pages/SingleProductPage';
 import CardOffCanvas from './components/common/CardOffCanvas';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {IoMdArrowDropleft, IoMdArrowDropright} from 'react-icons/io'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
@@ -39,7 +39,7 @@ export default function Slider(props){
                 {props.slides.map((image, index) => {
                     return (
                         <div key={index}>
-                            <img src={image} />
+                            <img src={image} alt=""/>
                         </div>
                     )
                 })}
