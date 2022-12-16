@@ -20,7 +20,7 @@ html{
 }
 
 .app-header{
-  background: #202124;
+  background: black;
   color:#533294;
   height: 15rem;
   display: flex;

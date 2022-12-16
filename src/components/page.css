@@ -1,6 +1,7 @@
 .home-div-page-1{
   height: 100vh;
-  background: black;
+  background: white;
+  border-bottom: 5px solid white;
 }
 
 .container-image-home{
@@ -18,19 +19,20 @@
 
 .home-div-page-2{
   height: 100vh;
-  background: linear-gradient(to left,#FBF8EC, #F5F0DB);
+  background: black;
   display: flex;
   justify-content: center;
+  border-bottom: 5px solid white;
 }
 
 .home-div-page-3{
   height: 100vh;
-  background: linear-gradient(to left,#EEF8F5, #DBF5EE);
+  background: white;
 }
 
 
 .text-home-page-1{
-  color: white;
+  color: black;
   position: absolute;
   top: 1%; 
   width: 100%;
