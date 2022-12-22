@@ -7,15 +7,15 @@ export function Products(props) {
         // 👇️ navigate to /products
         console.log(props)
         navigate('/product/' + props.name + '/' + props.id);
-      };
+    };
 
-    return(
+    return (
         <div className='productList' onClick={navigateToProduct}>
             <div key={props.id} className='productCard'>
-                    <h3 className='productName'>{props.name.toUpperCase()}</h3>
-                    <div className='productImage'>
-                        <Slider slides={props.image} showThumbs={false} showIndicators={false} showArrows={false}/>
-                    </div>
+                <h3 className='productName'>{props.name.toUpperCase()}</h3>
+                <div className='productImage'>
+                    <Slider slides={props.image} showThumbs={false} showIndicators={false} showArrows={false} />
+                </div>
 
                 <div className='productCard__content'>
                     <div className='displayStack__1'>
