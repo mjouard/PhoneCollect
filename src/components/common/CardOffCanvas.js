@@ -32,7 +32,7 @@ export default function CardOffCanvas() {
                     {list().length}
                 </div>
             </div>
-            <Offcanvas placement='end' show={show} onHide={handleClose} style={{ width: "40%" }}>
+            <Offcanvas placement='end' show={show} onHide={handleClose} style={{ width: "50%" }}>
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title> <h1>Votre panier</h1></Offcanvas.Title>
                 </Offcanvas.Header>
@@ -40,7 +40,7 @@ export default function CardOffCanvas() {
                     {list().map(product => {
                         return (
                             <div style={{display: "flex", flexDirection: "row", marginTop: "20px"}}>
-                                <img src={product.image[0]} width="10%" style={{cursor: "pointer"}} onClick={() => navigateToProduct(product.name, product.id)}/>
+                                <img src={product.image[0]} width="70px" style={{cursor: "pointer"}} onClick={() => navigateToProduct(product.name, product.id)}/>
                                 <div style={{cursor: "pointer"}} onClick={() => navigateToProduct(product.name, product.id)}>
                                     <h3 style={{fontWeight: "bold"}}>{product.name}</h3>
                                     <p>{product.price}€</p>
