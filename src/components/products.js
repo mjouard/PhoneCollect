@@ -5,7 +5,6 @@ export function Products(props) {
 
     const navigateToProduct = () => {
         // 👇️ navigate to /products
-        console.log(props)
         navigate('/product/' + props.name + '/' + props.id);
     };
 
