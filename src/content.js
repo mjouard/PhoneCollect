@@ -7,7 +7,7 @@ const productData = [
       price: 220,
       rating: 5,
       timeLeft: 27,
-      capacity: 7479 
+      capacity: 64 
     },
     {
       id: 2,
@@ -15,10 +15,10 @@ const productData = [
       image:
         ["/macbookair2020.jpeg", "/macbookair2020 2.jpeg"],
       productType: "computer",
-      price: 169,
+      price: 1200,
       rating: 5,
       timeLeft: 24,
-      capacity: 6898
+      capacity: 512
     },
     {
       id: 3,
@@ -29,7 +29,7 @@ const productData = [
       price: 170,
       rating: 4,
       timeLeft: 21,
-      capacity: 6347 
+      capacity: 128 
     },
     {
         id: 4,
