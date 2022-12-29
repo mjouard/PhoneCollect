@@ -40,7 +40,7 @@ export default function CardOffCanvas() {
                     {list().map(product => {
                         return (
                             <div style={{display: "flex", flexDirection: "row", marginTop: "20px"}}>
-                                <img src={product.image[0]} width="70px" style={{cursor: "pointer"}} onClick={() => navigateToProduct(product.name, product.id)}/>
+                                <img src={product.image[0]} width="70px" style={{cursor: "pointer"}} onClick={() => navigateToProduct(product.name, product.id)} alt=""/>
                                 <div style={{cursor: "pointer"}} onClick={() => navigateToProduct(product.name, product.id)}>
                                     <h3 style={{fontWeight: "bold"}}>{product.name}</h3>
                                     <p>{product.price}€</p>

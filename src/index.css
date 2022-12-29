@@ -35,6 +35,7 @@ html{
   -webkit-text-fill-color: transparent;
   margin-top: auto;
   margin-bottom: auto;
+  z-index: 1;
 }
 
 .product-container {
