@@ -18,7 +18,7 @@
 }
 
 .home-div-page-2{
-  height: 100vh;
+  min-height: 100vh;
   background: black;
   display: flex;
   justify-content: center;
@@ -45,8 +45,8 @@
     display: grid;
     justify-items: center;
     grid-template-columns: 700px 700px;
-    grid-template-rows: 550px 550px;
     justify-content: center;
+    align-items: center;
     margin: 100px;
   }
 
@@ -67,7 +67,6 @@
   @media screen and (max-width: 1400px) {
     .home-page-2-container{
       grid-template-columns: 550px 550px;
-      grid-template-rows: 470px 470px;
     }
   }
   
