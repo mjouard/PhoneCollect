@@ -26,8 +26,8 @@ export default function CardOffCanvas() {
 
     return (
         <>
-            <div style={{ position: 'absolute', right: "20px", cursor: "pointer" }} onClick={handleShow}>
-                <AiOutlineShoppingCart style={{marginRight: "6px"}}/>
+            <div style={{ position: 'absolute', right: "20px", cursor: "pointer", display: "flex", alignItems: "center", textAlign: "center" }} onClick={handleShow}>
+                <AiOutlineShoppingCart style={{marginRight: "6px", fontSize: "calc(20px + 2vw)"}}/>
                 <div style={{backgroundColor: '#DDC815', borderRadius: '20px', position: 'absolute', right: "0", top: "0", fontSize: "calc(10px + 0.5vw)", minWidth: "calc(10px + 1vw)" }}>
                     {list().length}
                 </div>
