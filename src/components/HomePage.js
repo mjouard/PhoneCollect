@@ -28,14 +28,14 @@ export default function HomePage(props) {
             <div className="home-div-page-2">
                 <div className="home-page-2-container">
                     <div className="home-2-div-products"
-                        onClick={() => navigateToProducts("phone")}>
+                        onClick={() => navigateToProducts(1)}>
                         Voir nos téléphones
-                        <Slider slides={phoneSlides} showArrows={false} autoPlay={true} showIndicators={false} showThumbs={false} />
+                        <Slider src_prefixe="" slides={phoneSlides} showArrows={false} autoPlay={true} showIndicators={false} showThumbs={false} />
                     </div>
                     <div className="home-2-div-products"
-                        onClick={() => navigateToProducts("computer")}>
+                        onClick={() => navigateToProducts(2)}>
                         Voir nos ordinateurs
-                        <Slider slides={computerSlides} showArrows={false} autoPlay={true} showIndicators={false} showThumbs={false} />
+                        <Slider src_prefixe="" slides={computerSlides} showArrows={false} autoPlay={true} showIndicators={false} showThumbs={false} />
                     </div>
                 </div>
             </div>

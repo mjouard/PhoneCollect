@@ -1,9 +1,9 @@
 import { Products } from './products';
-import contents from '../content';
 import Filter from './filter';
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Header from './common/Header';
 import { useParams } from 'react-router-dom';
+import { getProducts } from '../API/ProductsAPI';
 
 function singleFilter(products, productType, label) {
     if (productType.length === 0) {
@@ -17,8 +17,8 @@ function singleFilter(products, productType, label) {
     }
 }
 
-function filterProducts(products, productType, capacity, searchQuery) {
-    return searchFilter(singleFilter(singleFilter(products, capacity, "capacity"), productType, "productType"), searchQuery)
+function filterProducts(products, type, capacity, searchQuery) {
+    return searchFilter(singleFilter(singleFilter(products, capacity, "capacity"), type, "typeId"), searchQuery)
 }
 
 function searchFilter(products, searchQuery) {
@@ -33,11 +33,20 @@ function searchFilter(products, searchQuery) {
 
 export default function ProductPage() {
     let { productType } = useParams()
-    productType = productType || null
-    console.log(productType)
+    productType = parseInt(productType) || null
     const [type, setType] = useState([productType]);
     const [capacity, setCapacity] = useState([]);
     const [searchQuery, setSearchQuery] = useState("")
+    const [products, setProducts] = useState([]);
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        !isMounted &&
+            getProducts().then((json) => {
+                setProducts(json.data);
+                setIsMounted(true);
+            });
+    }, [isMounted]);
 
 
     return (
@@ -46,19 +55,19 @@ export default function ProductPage() {
             <div className='product-container'>
                 <Filter
                     capacity={capacity} setCapacity={setCapacity}
-                    products={contents} searchQuery={searchQuery} setSearchQuery={setSearchQuery}
+                    products={products} searchQuery={searchQuery} setSearchQuery={setSearchQuery}
                 />
                 <div className='App'>
-                    {filterProducts(contents, type, capacity, searchQuery).map(contents => (
+                    {filterProducts(products, type, capacity, searchQuery).map(product => (
                         <Products
-                            key={contents.id}
-                            id={contents.id}
-                            image={contents.image}
-                            name={contents.name}
-                            price={contents.price}
-                            capacity={contents.capacity}
-                            timeLeft={contents.timeLeft}
-                            rating={contents.rating}
+                            key={product.id}
+                            id={product.id}
+                            image={product.image}
+                            name={product.name}
+                            price={product.price}
+                            capacity={product.capacity}
+                            timeLeft={product.timeLeft}
+                            rating={product.rating}
                         />
                     ))}
                 </div>

@@ -1,0 +1,79 @@
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=file] {
+    width: 100%;
+  }
+
+  .admin-list-product{
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+  }
+
+  .admin-list-container{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative
+  }
+
+  .button-create-product{
+    border-radius: 10px;
+    width: 60%;
+    min-height: calc( 50px + 5% );
+    cursor: pointer;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    z-index: 1;
+    color: white;
+  }
+
+  .button-create-product:hover{
+    color: rgb(161, 127, 172)
+  }
+
+  .icon-container{
+    position: absolute;
+    right: 3%;
+  }
+
+  .icon-delete-product{
+    color: white;
+    cursor: pointer;
+    font-size: calc( 20px + 4% );
+  }
+
+  .icon-modify-product{
+    cursor: pointer;
+    font-size: calc( 20px + 4% );
+    margin-right: 10px;
+  }
+
+  .product-text{
+    width: calc( 10% + 20px );
+    margin-left: 7%;
+  }
+
+  .item-img{
+    width: calc( 5% + 30px );
+    margin-left: 6px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+  

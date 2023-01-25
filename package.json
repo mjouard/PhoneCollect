@@ -6,6 +6,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@material/checkbox": "^14.0.0",
+    "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.10.14",
     "@syncfusion/ej2-react-navigations": "^20.3.58",
     "@testing-library/jest-dom": "^5.16.5",
@@ -22,7 +23,9 @@
     "react-id-swiper": "^4.0.0",
     "react-responsive-carousel": "^3.2.23",
     "react-scripts": "5.0.1",
+    "react-social-login-buttons": "^3.6.1",
     "react-soundcloud-player": "^1.1.1",
+    "react-toastify": "^9.1.1",
     "swiper": "^8.4.4",
     "web-vitals": "^2.1.4"
   },

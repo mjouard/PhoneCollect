@@ -60,6 +60,7 @@
     background-color: black;
     height: calc(30px + 2vw);
     color: white;
+    font-size: calc(20px + 0.5vw);
 }
 
 .pay-button:hover{

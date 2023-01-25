@@ -39,7 +39,7 @@ export default function Slider(props){
                 {props.slides.map((image, index) => {
                     return (
                         <div key={index}>
-                            <img src={image} alt=""/>
+                            <img src={props.src_prefixe + image} alt=""/>
                         </div>
                     )
                 })}

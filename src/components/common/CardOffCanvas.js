@@ -5,6 +5,10 @@ import { total, list, remove } from 'cart-localstorage'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
 import './cardoffcanvas.css'
+import constants from '../../utils/constants';
+
+const server_host = constants.server_host
+const static_files = constants.static_files
 
 function deleteProduct(id, setCart) {
     remove(id)
@@ -25,6 +29,10 @@ export default function CardOffCanvas() {
         navigate('/product/' + name + '/' + id);
     };
 
+    const navigateToPayment = () => {
+        navigate('/payment');
+    }
+
     return (
         <>
             <div className='cart-icon-container' onClick={handleShow}>
@@ -40,8 +48,8 @@ export default function CardOffCanvas() {
                 <Offcanvas.Body>
                     {list().map(product => {
                         return (
-                            <div className='cart-item-container'>
-                                <img src={product.image[0]} width="70px" style={{cursor: "pointer", marginLeft: "10px"}} onClick={() => navigateToProduct(product.name, product.id)} alt=""/>
+                            <div key={product.id} className='cart-item-container'>
+                                <img src={server_host + static_files + product.image[0]} width="70px" style={{cursor: "pointer", marginLeft: "10px"}} onClick={() => navigateToProduct(product.name, product.id)} alt=""/>
                                 <div className='item-details' onClick={() => navigateToProduct(product.name, product.id)}>
                                     <h3 style={{fontWeight: "bold"}}>{product.name}</h3>
                                     <p>{product.price}€</p>
@@ -51,7 +59,7 @@ export default function CardOffCanvas() {
                             </div>
                         )
                     })}
-                    <button className='pay-button' > Payer {total()}€ </button>
+                    <button className='pay-button' onClick={navigateToPayment}> Payer {total()}€ </button>
                 </Offcanvas.Body>
             </Offcanvas>
         </>
