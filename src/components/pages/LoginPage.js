@@ -54,7 +54,7 @@ export default function LoginPage(props) {
                         </p>
                     </div>
 
-                    {loginFlag ? <SignInForm /> : <SignUpForm />}
+                    {loginFlag ? <SignInForm handleCloseLogin={props.handleCloseLogin} openSignup={() => setLoginFlag(false)} /> : <SignUpForm openLogin={() => setLoginFlag(true)}/>}
                 </div>
             </div>
         </Modal>

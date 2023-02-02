@@ -26,6 +26,9 @@ export default function HomePage(props) {
                 </div>
             </div>
             <div className="home-div-page-2">
+                <p className="text-home-page-2">
+                    Nos produits
+                </p>
                 <div className="home-page-2-container">
                     <div className="home-2-div-products"
                         onClick={() => navigateToProducts(1)}>
@@ -39,7 +42,11 @@ export default function HomePage(props) {
                     </div>
                 </div>
             </div>
-            <div className="home-div-page-3" />
+            <div className="home-div-page-3">
+                <p className="text-home-page-1">
+                    Vendre un appareil
+                </p>
+            </div>
         </div>
     )
 }

@@ -1,5 +1,6 @@
+import { Alert } from "@mui/material";
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { login } from "../../API/UserAPI";
 
 class SignInForm extends Component {
   constructor() {
@@ -7,7 +8,9 @@ class SignInForm extends Component {
 
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      errorMessage: "",
+      sucessMessage: "",
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -24,11 +27,27 @@ class SignInForm extends Component {
     });
   }
 
+  exec_login(){
+    const user = {"email": this.state.email, "password": this.state.password}
+    login(user).then(res => {
+        if (res.message){
+            this.setState({errorMessage: res.message})
+        }
+        else{
+            this.setState({errorMessage: "", successMessage: "Connexion réussie"})
+            localStorage.setItem("phone_collect_user", JSON.stringify(res))
+            console.log(res)
+            this.props.handleCloseLogin()
+        }
+    })
+  }
+
   handleSubmit(event) {
     event.preventDefault();
 
     console.log("The form was submitted with the following data:");
-    console.log(this.state);
+    //console.log(this.state);
+    this.exec_login()
   }
 
   render() {
@@ -64,12 +83,14 @@ class SignInForm extends Component {
               onChange={this.handleChange}
             />
           </div>
+          {this.state.errorMessage ? <Alert severity="error">{this.state.errorMessage}</Alert> : null }
+          {this.state.successMessage ? <Alert severity="success">{this.state.successMessage}</Alert> : null }
 
           <div className="formField">
             <button className="formFieldButton">Connexion</button>{" "}
-            <Link to="/" className="formFieldLink">
+            <p className="formFieldLink" onClick={this.props.openSignup}>
               Créer un compte
-            </Link>
+            </p>
           </div>
         </form>
       </div>

@@ -8,7 +8,7 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import Logout from '@mui/icons-material/Logout';
-import { getCurrentUser } from '../../utils/utils';
+import { clearCurrentUser, getCurrentUser } from '../../utils/utils';
 import { FiLogIn } from "react-icons/fi"
 import LoginPage from '../pages/LoginPage';
 
@@ -81,7 +81,7 @@ export default function AccountMenu() {
                             <Avatar /> Profile
                         </MenuItem>
                         <Divider />
-                        <MenuItem onClick={handleClose}>
+                        <MenuItem onClick={clearCurrentUser}>
                             <ListItemIcon>
                                 <Logout fontSize="small" />
                             </ListItemIcon>

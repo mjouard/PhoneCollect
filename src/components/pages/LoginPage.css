@@ -98,6 +98,7 @@
   
   .formField {
     margin-bottom: 40px;
+    margin-top: 40px
   }
   
   .formFieldLabel {
@@ -140,6 +141,11 @@
     display: inline-block;
     border-bottom: 1.5px solid #6b5b95;
     padding-bottom: 5px;
+    cursor: pointer;
+  }
+
+  .formFieldLink:hover{
+    color: white
   }
   
   .formFieldCheckboxLabel {

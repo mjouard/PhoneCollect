@@ -1,5 +1,5 @@
 const constants = {
-    "server_host": "https://4641-2a01-cb19-9f7-a300-c52d-348f-caa8-edf4.ngrok.io",
+    "server_host": "https://cfde-176-180-86-209.ngrok.io",
     "static_files":  "/images/",
 }
 

@@ -52,55 +52,39 @@ class SignUpForm extends Component {
             />
           </div>
           <div className="formField">
-            <label className="formFieldLabel" htmlFor="password">
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              className="formFieldInput"
-              placeholder="Enter your password"
-              name="password"
-              value={this.state.password}
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="formField">
             <label className="formFieldLabel" htmlFor="email">
-              E-Mail Address
+              Adresse Email
             </label>
             <input
               type="email"
               id="email"
               className="formFieldInput"
-              placeholder="Enter your email"
+              placeholder="Entrez votre email"
               name="email"
               value={this.state.email}
               onChange={this.handleChange}
             />
           </div>
-
           <div className="formField">
-            <label className="formFieldCheckboxLabel">
-              <input
-                className="formFieldCheckbox"
-                type="checkbox"
-                name="hasAgreed"
-                value={this.state.hasAgreed}
-                onChange={this.handleChange}
-              />{" "}
-              I agree all statements in{" "}
-              <a href="null" className="formFieldTermsLink">
-                terms of service
-              </a>
+            <label className="formFieldLabel" htmlFor="password">
+              Mot de passe
             </label>
+            <input
+              type="password"
+              id="password"
+              className="formFieldInput"
+              placeholder="Entrez votre mot de passe"
+              name="password"
+              value={this.state.password}
+              onChange={this.handleChange}
+            />
           </div>
 
           <div className="formField">
             <button className="formFieldButton">Sign Up</button>{" "}
-            <Link to="/sign-in" className="formFieldLink">
+            <p onClick={this.props.openLogin} className="formFieldLink">
               I'm already member
-            </Link>
+            </p>
           </div>
         </form>
       </div>

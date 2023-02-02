@@ -36,12 +36,20 @@
 
 .text-home-page-1{
   color: black;
-  position: absolute;
   top: 1%; 
   width: 100%;
   text-align: center;
   font-size: 70px;
   font-family: cursive;
+}
+
+.text-home-page-2{
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-size: 70px;
+  font-family: cursive;
+  position: absolute;
 }
 
   .home-page-2-container{
