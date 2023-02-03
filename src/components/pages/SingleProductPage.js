@@ -7,6 +7,7 @@ import { add, exists } from 'cart-localstorage'
 import { useEffect, useState } from "react"
 import constants from "../../utils/constants"
 import { getProduct } from "../../API/ProductsAPI"
+import Loader from "../common/loader"
 
 const static_host = constants.server_host + constants.static_files
 
@@ -24,10 +25,12 @@ export default function SingleProductPage(props) {
 
     useEffect(() => {
         !isMounted &&
-            getProduct(id).then((json) => {
-                setProduct(json);
-                setIsMounted(true);
-            });
+            setTimeout(function () {
+                getProduct(id).then((json) => {
+                    setProduct(json);
+                    setIsMounted(true);
+                });
+            }, 500);
     }, [isMounted]);
 
     const [refresh, setRefresh] = useState(exists(id))
@@ -53,7 +56,7 @@ export default function SingleProductPage(props) {
                     </div>
                 </div>
                 :
-                null
+                <Loader />
             }
         </div>
     )

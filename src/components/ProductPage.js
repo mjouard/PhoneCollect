@@ -43,10 +43,12 @@ export default function ProductPage() {
 
     useEffect(() => {
         !isMounted &&
-            getProducts().then((json) => {
-                setProducts(json.data);
-                setIsMounted(true);
-            });
+            setTimeout(function () {
+                getProducts().then((json) => {
+                    setProducts(json.data);
+                    setIsMounted(true);
+                });
+            }, 1000);
     }, [isMounted]);
 
 
@@ -54,10 +56,10 @@ export default function ProductPage() {
         <div className='App-container'>
             <Header />
             <div className='product-container'>
-                <Filter
+                {isMounted ? <Filter
                     capacity={capacity} setCapacity={setCapacity}
                     products={products} searchQuery={searchQuery} setSearchQuery={setSearchQuery}
-                />
+                /> : null}
                 <div className='App'>
                     {isMounted ? null : <Loader />}
                     {filterProducts(products, type, capacity, searchQuery).map(product => (
