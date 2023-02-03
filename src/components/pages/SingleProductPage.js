@@ -47,7 +47,9 @@ export default function SingleProductPage(props) {
                             <GrStorage />
                             <p> {product.capacity} GO</p>
                         </div>
-                        <button className="buy-button" onClick={() => addToCart(product, refresh, setRefresh)}> Ajouter au panier </button>
+                        <button className="button-add-cart" onClick={() => addToCart(product, refresh, setRefresh)}>
+                            Ajouter au panier
+                        </button>
                     </div>
                 </div>
                 :

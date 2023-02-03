@@ -36,7 +36,7 @@ export default function CardOffCanvas() {
     return (
         <>
             <div className='cart-icon-container' onClick={handleShow}>
-                <AiOutlineShoppingCart className='cart-icon'/>
+                <AiOutlineShoppingCart className='cart-icon' />
                 <div className='cart-icon-number'>
                     {list().length}
                 </div>
@@ -49,9 +49,9 @@ export default function CardOffCanvas() {
                     {list().map(product => {
                         return (
                             <div key={product.id} className='cart-item-container'>
-                                <img src={server_host + static_files + product.image[0]} width="70px" style={{cursor: "pointer", marginLeft: "10px"}} onClick={() => navigateToProduct(product.name, product.id)} alt=""/>
+                                <img src={server_host + static_files + product.image[0]} width="70px" style={{ cursor: "pointer", marginLeft: "10px" }} onClick={() => navigateToProduct(product.name, product.id)} alt="" />
                                 <div className='item-details' onClick={() => navigateToProduct(product.name, product.id)}>
-                                    <h3 style={{fontWeight: "bold"}}>{product.name}</h3>
+                                    <h3 style={{ fontWeight: "bold" }}>{product.name}</h3>
                                     <p>{product.price}€</p>
                                     <p>{product.capacity} GO</p>
                                 </div>
@@ -59,7 +59,12 @@ export default function CardOffCanvas() {
                             </div>
                         )
                     })}
-                    <button className='pay-button' onClick={navigateToPayment}> Payer {total()}€ </button>
+                    <button onClick={navigateToPayment} class="fancy">
+                        <span class="top-key"></span>
+                        <span class="text">Payer {total()}€</span>
+                        <span class="bottom-key-1"></span>
+                        <span class="bottom-key-2"></span>
+                    </button>
                 </Offcanvas.Body>
             </Offcanvas>
         </>

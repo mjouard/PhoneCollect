@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react"
 import Header from './common/Header';
 import { useParams } from 'react-router-dom';
 import { getProducts } from '../API/ProductsAPI';
+import Loader from './common/loader';
 
 function singleFilter(products, productType, label) {
     if (productType.length === 0) {
@@ -58,6 +59,7 @@ export default function ProductPage() {
                     products={products} searchQuery={searchQuery} setSearchQuery={setSearchQuery}
                 />
                 <div className='App'>
+                    {isMounted ? null : <Loader />}
                     {filterProducts(products, type, capacity, searchQuery).map(product => (
                         <Products
                             key={product.id}
