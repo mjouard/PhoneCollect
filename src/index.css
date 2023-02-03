@@ -95,6 +95,8 @@ html{
   justify-content: space-evenly;
   margin-top: 5rem;
   cursor: pointer;
+  transform: scale(0);
+	animation: scaleUp 0.5s ease-in-out forwards;
 }
 
 .productCard{
@@ -174,4 +176,9 @@ html{
 .productSales,
 .productTime{
   font-size: 1.1rem;
+}
+
+@keyframes scaleUp {
+	0% { opacity: 0; }
+	100% { -webkit-transform: scale(1); transform: scale(1); opacity: 1; }
 }

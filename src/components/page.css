@@ -61,12 +61,19 @@
     margin: 100px;
   }
 
-  .home-2-div-products{
+  .home-2-div-products-1, .home-2-div-products-2{
     font-size: 30px;
     cursor: pointer;
     width: 80%;
     text-align: center;
-    background-color: orange
+    background-color: orange;
+  }
+
+  .in-out-animation{
+    transform: rotateY(180deg);
+	  transition: transform 0.8s;
+    transform-style: preserve-3d;
+    animation-delay: 0.3s;
   }
 
   @media screen and (max-width: 1400px) {

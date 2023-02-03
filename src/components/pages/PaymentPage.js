@@ -13,8 +13,9 @@ import {
 } from "mdb-react-ui-kit";
 import React from "react";
 import { useNavigate } from 'react-router-dom';
-import { total, list, remove } from 'cart-localstorage'
+import { total, list } from 'cart-localstorage'
 import constants from "../../utils/constants";
+import { getCurrentUser } from "../../utils/utils";
 
 const server_host = constants.server_host
 const static_files = constants.static_files
@@ -22,6 +23,7 @@ const deliveryPrice = 9.99;
 
 export default function PaymentPage() {
   const navigate = useNavigate()
+  const user = getCurrentUser();
 
   return (
     <>
@@ -108,7 +110,7 @@ export default function PaymentPage() {
                               Carte bancaire
                             </MDBTypography>
                           </div>
-
+                          <p>Veuillez vous connecter pour régler votre commande</p>
                           <p className="small">Card type</p>
                           <a href="#!" type="submit" className="text-white">
                             <MDBIcon fab icon="cc-mastercard fa-2x me-2" />
@@ -124,19 +126,19 @@ export default function PaymentPage() {
                           </a>
 
                           <form className="mt-4">
-                            <MDBInput className="mb-4" label="Cardholder's Name" type="text" size="lg"
+                            <MDBInput disabled={!user} className="mb-4" label="Cardholder's Name" type="text" size="lg"
                               placeholder="Cardholder's Name" contrast />
 
-                            <MDBInput className="mb-4" label="Card Number" type="text" size="lg"
+                            <MDBInput disabled={!user} className="mb-4" label="Card Number" type="text" size="lg"
                               minLength="19" maxLength="19" placeholder="1234 5678 9012 3457" contrast />
 
                             <MDBRow className="mb-4">
                               <MDBCol md="6">
-                                <MDBInput className="mb-4" label="Expiration" type="text" size="lg"
+                                <MDBInput disabled={!user} className="mb-4" label="Expiration" type="text" size="lg"
                                   minLength="7" maxLength="7" placeholder="MM/YYYY" contrast />
                               </MDBCol>
                               <MDBCol md="6">
-                                <MDBInput className="mb-4" label="Cvv" type="text" size="lg" minLength="3"
+                                <MDBInput disabled={!user} className="mb-4" label="Cvv" type="text" size="lg" minLength="3"
                                   maxLength="3" placeholder="&#9679;&#9679;&#9679;" contrast />
                               </MDBCol>
                             </MDBRow>
@@ -159,7 +161,7 @@ export default function PaymentPage() {
                             <p className="mb-2">{total()+deliveryPrice}€</p>
                           </div>
 
-                          <MDBBtn color="info" block size="lg">
+                          <MDBBtn disabled={!user} color="info" block size="lg">
                             <div className="d-flex justify-content-between">
                               <span>{total()+deliveryPrice}€</span>
                               <span>
