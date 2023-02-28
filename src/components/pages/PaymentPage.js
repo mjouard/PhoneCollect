@@ -1,4 +1,3 @@
-import Header from "../common/Header";
 import {
   MDBBtn,
   MDBCard,
@@ -16,6 +15,7 @@ import { useNavigate } from 'react-router-dom';
 import { total, list } from 'cart-localstorage'
 import constants from "../../utils/constants";
 import { getCurrentUser } from "../../utils/utils";
+import DrawerAppBar from "../common/Navbar";
 
 const server_host = constants.server_host
 const static_files = constants.static_files
@@ -27,7 +27,7 @@ export default function PaymentPage() {
 
   return (
     <>
-      <Header />
+      <DrawerAppBar />
       <section className="h-100 h-custom" style={{ backgroundColor: "#eee", minHeight: "85vh" }}>
         <MDBContainer className="py-5 h-100">
           <MDBRow className="justify-content-center align-items-center h-100">

@@ -1,10 +1,10 @@
 import { Products } from './products';
 import Filter from './filter';
 import React, { useEffect, useState } from "react"
-import Header from './common/Header';
 import { useParams } from 'react-router-dom';
 import { getProducts } from '../API/ProductsAPI';
 import Loader from './common/loader';
+import DrawerAppBar from './common/Navbar';
 
 function singleFilter(products, productType, label) {
     if (productType.length === 0) {
@@ -54,7 +54,7 @@ export default function ProductPage() {
 
     return (
         <div className='App-container'>
-            <Header />
+            <DrawerAppBar />
             <div className='product-container'>
                 {isMounted ? <Filter
                     capacity={capacity} setCapacity={setCapacity}

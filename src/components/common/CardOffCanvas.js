@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { AiOutlineShoppingCart, AiFillDelete } from "react-icons/ai"
 import { total, list, remove } from 'cart-localstorage'
@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
 import './cardoffcanvas.css'
 import constants from '../../utils/constants';
+import { start_animation_scale } from '../../utils/utils';
 
 const server_host = constants.server_host
 const static_files = constants.static_files
@@ -22,7 +23,7 @@ export default function CardOffCanvas() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [cart, setCart] = useState(list())
-
+    const [isMounted, setIsMounted] = useState(false)
     const navigateToProduct = (name, id) => {
         // 👇️ navigate to /products
         setShow(false);
@@ -32,6 +33,11 @@ export default function CardOffCanvas() {
     const navigateToPayment = () => {
         navigate('/payment');
     }
+
+    useEffect(() => {
+        show &&
+            start_animation_scale("cart-item-container");
+    }, [show]);
 
     return (
         <>

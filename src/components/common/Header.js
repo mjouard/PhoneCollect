@@ -12,7 +12,6 @@ export default function Header(props) {
 
 	return (
 		<div className='app-header'>
-			<p className='gradient-text-header'> Phone Collect </p>
 			<img onClick={navigateToHome} alt="" src="/logo/phone-collect-logo.png" style={{ cursor: "pointer", width: "15rem", position: "absolute", top: "0%", left: "0%", }} />
 			<AccountMenu />
 			<CardOffCanvas />

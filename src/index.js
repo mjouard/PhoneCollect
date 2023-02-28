@@ -9,6 +9,7 @@ import CardOffCanvas from './components/common/CardOffCanvas';
 import PaymentPage from './components/pages/PaymentPage';
 import AdminPage from './components/pages/AdminPage';
 import LoginPage from './components/pages/LoginPage';
+import Navbar from './components/common/Navbar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,6 +25,7 @@ root.render(
         <Route path="canvas" element={<CardOffCanvas />} />
         <Route path="payment" element={<PaymentPage />} />
         <Route path="admin" element={<AdminPage />} />
+        <Route path="navbar" element={<Navbar />} />
       </Routes>
     </BrowserRouter>
 );

@@ -1,6 +1,4 @@
 .cart-icon-container{
-    position: absolute;
-    right: 20px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -9,16 +7,15 @@
 
 .cart-icon{
     margin-right: 6px;
-    font-size: calc(20px + 2vw);
+    font-size: calc(20px + 1vw);
 }
 
 .cart-icon:hover{
-    color: rgb(87, 7, 178);
-    font-size: calc(25px + 2vw);
+    color: rgb(255, 255, 255);
+    font-size: calc(25px + 1vw);
 }
 
 .cart-icon-number{
-    background-color: #DDC815;
     border-radius: 20px;
     position: absolute;
     right: 0;
@@ -34,6 +31,8 @@
     width: calc(150px + 20vw);
     border-radius: 10px;
     align-items: center;
+    transform: scale(0);
+    animation: scaleUp 0.5s ease-in-out forwards;
 }
 
 .cart-item-container:hover{

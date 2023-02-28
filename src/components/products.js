@@ -2,19 +2,9 @@ import { useNavigate } from 'react-router-dom';
 import Slider from './Slider';
 import constants from '../utils/constants';
 import { useEffect, useState } from 'react';
+import { start_animation_scale } from '../utils/utils';
 
 const static_host = constants.server_host + constants.static_files
-
-function start_animation() {
-    var list = document.getElementsByClassName("productList");
-
-    var delay = 0;
-
-    for (var i = 0; i < list.length; ++i) {
-        list[i].style.animationDelay = delay + 's';
-        delay += 0.25;
-    }
-}
 
 export function Products(props) {
     const navigate = useNavigate();
@@ -26,7 +16,7 @@ export function Products(props) {
     };
     useEffect(() => {
         !isMounted &&
-            start_animation();
+            start_animation_scale("productList");
             setIsMounted(true);
     }, [isMounted]);
 

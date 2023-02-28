@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom"
-import Header from "../common/Header"
 import Slider from "../Slider"
 import "./singleproductpage.css"
 import { GrStorage } from "react-icons/gr"
@@ -8,6 +7,7 @@ import { useEffect, useState } from "react"
 import constants from "../../utils/constants"
 import { getProduct } from "../../API/ProductsAPI"
 import Loader from "../common/loader"
+import DrawerAppBar from "../common/Navbar"
 
 const static_host = constants.server_host + constants.static_files
 
@@ -36,7 +36,7 @@ export default function SingleProductPage(props) {
     const [refresh, setRefresh] = useState(exists(id))
     return (
         <div>
-            <Header />
+            <DrawerAppBar />
             {isMounted ?
                 <div className="single-product-container">
                     <div className="product-slider-container">

@@ -10,12 +10,12 @@
   
   .appAside {
     width: 50%;
-    background-color: #6b5b95;
+    background-color: white;
   }
   
   .appForm {
     width: 50%;
-    background-color: #12130f;
+    background-color: black;
     padding: 25px 40px;
     overflow: auto;
   }
@@ -26,7 +26,7 @@
     }
     .appForm{
         width: 100%;
-        border: 2px solid #6b5b95;
+        border: 2px solid white;
     }
   }
   
@@ -49,8 +49,8 @@
   }
   
   .pageSwitcherItem:active {
-    background-color: #6b5b95;
-    color: white;
+    background-color: white;
+    color: black;
   }
 
   .pageSwitcherItem-active {

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import Header from "../common/Header"
 import "./adminManageProduct.css"
 import constants from "../../utils/constants";
 import { deleteProduct, getProducts } from "../../API/ProductsAPI";
@@ -10,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Modal from '@mui/material/Modal';
 import { SlNote } from "react-icons/sl"
 import EditProduct from "../admin/editProduct";
+import DrawerAppBar from "../common/Navbar";
 const server_host = constants.server_host;
 
 export default function AdminPage() {
@@ -53,7 +53,7 @@ export default function AdminPage() {
 
     return (
         <div>
-            <Header />
+            <DrawerAppBar />
             <Modal
                 open={openDelete}
                 onClose={() => setOpenDelete(false)}
