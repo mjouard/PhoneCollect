@@ -68,10 +68,15 @@
   }
 
   .in-out-animation{
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
 	  transition: transform 0.8s;
     transform-style: preserve-3d;
     animation-delay: 0.3s;
+  }
+
+  .home-2-title-container{
+    transform: rotateY(180deg);
   }
 
   @media screen and (max-width: 1400px) {

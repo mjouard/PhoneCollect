@@ -54,7 +54,7 @@ export default function HomePage(props) {
                 <div className="home-page-2-container">
                     <div className="home-2-div-products-1"
                         onClick={() => navigateToProducts(1)}>
-                        <p style={{transform: "rotateY(180deg)"}}>Voir nos téléphones</p>
+                        <p className="home-2-title-container">Voir nos téléphones</p>
                         <Slider src_prefixe="" slides={phoneSlides} showArrows={false} autoPlay={true} showIndicators={false} showThumbs={false} />
                     </div>
                     <div className="home-2-div-products-2"
