@@ -11,9 +11,9 @@ export default function HomePage(props) {
         navigate('/products/' + type);
     };
 
-    const phoneSlides = ["home-2/phone-product-1.jpg", "home-2/phone-product-2.webp"]
+    const phoneSlides = ["home-2/phone-product-1.jpg", "home-2/phone-product-2.jpg", "home-2/phone-product-3.jpg"]
 
-    const computerSlides = ["home-2/computer-product-1.jpeg", "home-2/computer-product-2.jpg", "home-2/computer-product-3.jpeg"]
+    const computerSlides = ["home-2/computer-product-1.jpg", "home-2/computer-product-2.jpg", "home-2/computer-product-3.jpg"]
 
     return (
         <div>
@@ -32,12 +32,12 @@ export default function HomePage(props) {
                 <div className="home-page-2-container">
                     <div className="home-2-div-products-1"
                         onClick={() => navigateToProducts(1)}>
-                        <p style={{transform: "rotateY(180deg)"}}>Voir nos téléphones</p>
+                        <p>Voir nos téléphones</p>
                         <Slider src_prefixe="" slides={phoneSlides} showArrows={false} autoPlay={true} showIndicators={false} showThumbs={false} />
                     </div>
                     <div className="home-2-div-products-2"
                         onClick={() => navigateToProducts(2)}>
-                        <p style={{transform: "rotateY(180deg)"}}>Voir nos ordinateurs</p>
+                        <p>Voir nos ordinateurs</p>
                         <Slider src_prefixe="" slides={computerSlides} showArrows={false} autoPlay={true} showIndicators={false} showThumbs={false} />
                     </div>
                 </div>
