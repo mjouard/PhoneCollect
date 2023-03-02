@@ -3,6 +3,14 @@ export function getCurrentUser(){
     return user; 
 }
 
+export function getUserRole(){
+    const user = JSON.parse(localStorage.getItem("phone_collect_user"))
+    if (user){
+        return user.role
+    }
+    return null; 
+}
+
 export function clearCurrentUser(){
     localStorage.removeItem("phone_collect_user")
 }

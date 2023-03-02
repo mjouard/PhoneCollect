@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
 import Slider from "../Slider"
 import "./singleproductpage.css"
-import { GrStorage } from "react-icons/gr"
+import { TiCloudStorageOutline } from "react-icons/ti"
 import { add, exists } from 'cart-localstorage'
 import { useEffect, useState } from "react"
 import constants from "../../utils/constants"
@@ -22,6 +22,7 @@ export default function SingleProductPage(props) {
     let { id } = useParams();
     const [product, setProduct] = useState();
     const [isMounted, setIsMounted] = useState(false);
+    const color = {title: "Bleu", hexa: "#2596be"}
 
     useEffect(() => {
         !isMounted &&
@@ -51,9 +52,20 @@ export default function SingleProductPage(props) {
                     </div>
                     <div className="product-data-container">
                         <p className="single-product-title"> {product.name} </p>
-                        <div style={{ textAlign: "left", display: "flex", flexDirection: "row" }}>
-                            <GrStorage />
-                            <p> {product.capacity} GO</p>
+                        <div className="single-product-stats">
+                            <div className="stats-item">
+                                <TiCloudStorageOutline style={{marginRight: "10px", fontSize: "25px"}}/>
+                                <div> {product.capacity} GO</div>
+                            </div>
+                            <div className="stats-item">Très bon état</div>
+                            <div className="stats-item">{product.price}€</div>
+                            <div className="stats-item">
+                                <div className="color-circle" style={{backgroundColor: color.hexa}}/>
+                                {color.title}
+                            </div>
+                        </div>
+                        <div className="single-product-description">
+                            {product.description}
                         </div>
                         <button className="button-add-cart" onClick={() => addToCart(product, refresh, setRefresh)}>
                             Ajouter au panier
