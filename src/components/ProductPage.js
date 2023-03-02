@@ -51,6 +51,12 @@ export default function ProductPage() {
             }, 1000);
     }, [isMounted]);
 
+    useEffect(() => {
+        setProducts([])
+        setType([productType])
+        setIsMounted(false)
+    }, [productType]);
+
 
     return (
         <div className='App-container'>

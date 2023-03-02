@@ -7,21 +7,11 @@
 
 .cart-icon{
     margin-right: 6px;
-    font-size: calc(20px + 1vw);
+    font-size: calc(20px + 0.8vw);
 }
 
 .cart-icon:hover{
-    color: rgb(255, 255, 255);
-    font-size: calc(25px + 1vw);
-}
-
-.cart-icon-number{
-    border-radius: 20px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    font-size: calc(10px + 0.5vw);
-    min-width: calc(10px + 1vw);
+    color: #b2f5ff;
 }
 
 .cart-item-container{

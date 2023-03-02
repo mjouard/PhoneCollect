@@ -17,3 +17,7 @@ export function start_animation_scale(className) {
         delay += 0.25;
     }
 }
+
+export function refreshPage() {
+    window.location.reload(false);
+  }

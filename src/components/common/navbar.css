@@ -1,7 +1,7 @@
 .logo{
     cursor: pointer;
     width: 15rem;
-    position: absolute;
+    position: fixed;
     top: 1.5%;
     left: 2%;
     z-index: 2
@@ -13,3 +13,38 @@
         right: 2%
     }
   }
+
+  /*effect-underline*/
+.effect-underline:after {
+	content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: 1em;
+  width: 100%;
+  border-bottom: solid 3px #019fb6;
+  margin-top: 10px;
+  opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale(0,1);
+	transform: scale(0,1);
+}
+
+.effect-underline:hover{
+    color: #b2f5ff;
+}
+
+.effect-underline:hover:after {
+  opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+.user-icon{
+    cursor: pointer;
+    margin-right: 10px;
+}
+.user-icon:hover{
+    color: #b2f5ff;
+}

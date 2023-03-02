@@ -23,7 +23,6 @@ export default function CardOffCanvas() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [cart, setCart] = useState(list())
-    const [isMounted, setIsMounted] = useState(false)
     const navigateToProduct = (name, id) => {
         // 👇️ navigate to /products
         setShow(false);
@@ -39,13 +38,11 @@ export default function CardOffCanvas() {
             start_animation_scale("cart-item-container");
     }, [show]);
 
+
     return (
         <>
             <div className='cart-icon-container' onClick={handleShow}>
                 <AiOutlineShoppingCart className='cart-icon' />
-                <div className='cart-icon-number'>
-                    {list().length}
-                </div>
             </div>
             <Offcanvas placement='end' show={show} onHide={handleClose} style={{ width: "auto" }}>
                 <Offcanvas.Header closeButton>

@@ -33,6 +33,11 @@ export default function SingleProductPage(props) {
             }, 500);
     }, [isMounted]);
 
+    useEffect(() => {
+        setProduct()
+        setIsMounted(false)
+    }, [id]);
+
     const [refresh, setRefresh] = useState(exists(id))
     return (
         <div>

@@ -10,7 +10,7 @@
   
   .appAside {
     width: 50%;
-    background-color: white;
+    background-color: #b2f5ff;
   }
   
   .appForm {
@@ -50,11 +50,11 @@
   
   .pageSwitcherItem:active {
     background-color: white;
-    color: black;
+    color: white;
   }
 
   .pageSwitcherItem-active {
-    background-color: #6b5b95;
+    background-color: #019fb6;
     color: white;
   }
   
@@ -93,7 +93,7 @@
   
   .formTitleLink-active {
     color: white;
-    border-bottom: 1px solid #6b5b95;
+    border-bottom: 1px solid #019fb6;
   }
   
   .formField {
@@ -125,7 +125,7 @@
   }
   
   .formFieldButton {
-    background-color: #6b5b95;
+    background-color: #019fb6;
     color: white;
     border: none;
     outline: none;
@@ -139,7 +139,7 @@
     color: #66707d;
     text-decoration: none;
     display: inline-block;
-    border-bottom: 1.5px solid #6b5b95;
+    border-bottom: 1.5px solid #019fb6;
     padding-bottom: 5px;
     cursor: pointer;
   }
@@ -160,7 +160,7 @@
   
   .formFieldTermsLink {
     color: white;
-    border-bottom: 1px solid #6b5b95;
+    border-bottom: 1px solid #019fb6;
     text-decoration: none;
     display: inline-block;
     padding-bottom: 2px;

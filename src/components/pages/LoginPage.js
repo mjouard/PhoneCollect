@@ -6,8 +6,8 @@ import { Modal } from "@mui/material";
 
 export default function LoginPage(props) {
     const [loginFlag, setLoginFlag] = useState(true)
-    const selectedStyle = { backgroundColor: "#6b5b95", color: "white" }
-    const titleActiveStyle = { color: "white", borderBottom: "1px solid #6b5b95" }
+    const selectedStyle = { backgroundColor: "#019fb6", color: "white" }
+    const titleActiveStyle = { color: "white", borderBottom: "1px solid #019fb6" }
 
     return (
         <Modal
