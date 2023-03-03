@@ -9,6 +9,7 @@ import { getProduct } from "../../API/ProductsAPI"
 import Loader from "../common/loader"
 import DrawerAppBar from "../common/Navbar"
 import { BsInfoCircle } from "react-icons/bs"
+import HistoryNav from "../common/HistoryNav"
 
 const static_host = constants.server_host + constants.static_files
 const info_text = "Tous les produits vendus sur Phone Collect proviennent de reconditionneurs experts et vérifiés, qui s'engagent à tester chaque appareil selon notre charte qualité. Chaque produit est 100% fonctionnel, parfaitement nettoyé et garanti."
@@ -23,6 +24,7 @@ function addToCart(product, refresh, setRefresh, fullAnimation) {
 
 export default function SingleProductPage(props) {
     let { id } = useParams();
+    const [history, setHistory] = useState([])
     const [product, setProduct] = useState();
     const [isMounted, setIsMounted] = useState(false);
     const color = {title: "Bleu", hexa: "#2596be"}
@@ -32,9 +34,10 @@ export default function SingleProductPage(props) {
             setTimeout(function () {
                 getProduct(id).then((json) => {
                     setProduct(json);
+                    setHistory([{title: "Acceuil", link: "/"}, {title: json.typeId == 1 ? "Téléphones" : "Ordinateurs", link: "/products/" + json.typeId}, {title: json.name, link: "/product/" + json.name + "/" + json.id}])
                     setIsMounted(true);
                 });
-            }, 500);
+            }, 300);
     }, [isMounted]);
 
     useEffect(() => {
@@ -74,6 +77,7 @@ export default function SingleProductPage(props) {
             <DrawerAppBar />
             {isMounted ?
                 <div className="single-product-container">
+                    <HistoryNav history={history} />
                     <div className="product-slider-container">
                         <div className="product-slider-image">
                             <Slider src_prefixe={static_host} slides={product.image} showArrows={false} autoPlay={true} showIndicators={false} />

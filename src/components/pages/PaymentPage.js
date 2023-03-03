@@ -16,6 +16,7 @@ import { total, list } from 'cart-localstorage'
 import constants from "../../utils/constants";
 import { getCurrentUser } from "../../utils/utils";
 import DrawerAppBar from "../common/Navbar";
+import HistoryNav from "../common/HistoryNav";
 
 const server_host = constants.server_host
 const static_files = constants.static_files
@@ -24,11 +25,13 @@ const deliveryPrice = 9.99;
 export default function PaymentPage() {
   const navigate = useNavigate()
   const user = getCurrentUser();
+  const history = [{title: "Acceuil", link: "/"}, {title: "Paiement", link: "/payment"}]
 
   return (
     <>
       <DrawerAppBar />
       <section className="h-100 h-custom" style={{ backgroundColor: "#eee", minHeight: "85vh" }}>
+        <HistoryNav history={history} />
         <MDBContainer className="py-5 h-100">
           <MDBRow className="justify-content-center align-items-center h-100">
             <MDBCol>
@@ -62,7 +65,7 @@ export default function PaymentPage() {
                       <div style={{maxHeight: "600px", overflowY: "scroll"}}>
                       {list().map(product => {
                         return (
-                          <MDBCard className="mb-3">
+                          <MDBCard key={product.id} className="mb-3">
                             <MDBCardBody>
                               <div className="d-flex justify-content-between">
                                 <div className="d-flex flex-row align-items-center">

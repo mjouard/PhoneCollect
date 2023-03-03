@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { getProducts } from '../API/ProductsAPI';
 import Loader from './common/loader';
 import DrawerAppBar from './common/Navbar';
+import HistoryNav from './common/HistoryNav';
 
 function singleFilter(products, productType, label) {
     if (productType.length === 0) {
@@ -48,7 +49,7 @@ export default function ProductPage() {
                     setProducts(json.data);
                     setIsMounted(true);
                 });
-            }, 1000);
+            }, 300);
     }, [isMounted]);
 
     useEffect(() => {
@@ -57,10 +58,13 @@ export default function ProductPage() {
         setIsMounted(false)
     }, [productType]);
 
+    const history = [{title: "Acceuil", link: "/"}, {title: productType == 1 ? "Téléphones" : "Ordinateurs", link: "/products/" + productType}]
+
 
     return (
         <div className='App-container'>
             <DrawerAppBar />
+            <HistoryNav history={history} />
             <div className='product-container'>
                 {isMounted ? <Filter
                     capacity={capacity} setCapacity={setCapacity}

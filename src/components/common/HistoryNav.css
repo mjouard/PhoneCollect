@@ -1,0 +1,23 @@
+.history-container{
+    z-index: 1;
+    position: absolute;
+    margin-top: -40px;
+    left: 10px;
+    font-size: 18px;
+    display: flex;
+}
+
+.history-item{
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.history-item:hover{
+    color: rgb(34, 32, 32);
+    border-bottom: 2px solid rgb(34, 32, 32);
+}
+
+.history-item-div{
+    display: flex;
+}

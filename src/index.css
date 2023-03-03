@@ -82,6 +82,7 @@ html{
   font-size: 4rem;
   text-align: center;
   margin-top: 0;
+  min-height:100vh;
 }
 .productList{
   display: flex;

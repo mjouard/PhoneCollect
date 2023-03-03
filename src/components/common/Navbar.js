@@ -114,7 +114,7 @@ function DrawerAppBar(props) {
                     <Box sx={{ display: { xs: "flex", sm: 'none' }, flexDirection: "row", fontSize: "calc(20px + 0.8vw)" }}>
                         <Button
                             id="basic-button"
-                            style={{ fontSize: "calc(20px + 0.8vw)", color: "white" }}
+                            style={{ fontSize: "calc(12px + 0.8vw)", color: "white" }}
                             aria-controls={open ? 'basic-menu' : undefined}
                             aria-haspopup="true"
                             aria-expanded={open ? 'true' : undefined}

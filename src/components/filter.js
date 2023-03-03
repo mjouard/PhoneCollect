@@ -33,6 +33,13 @@ export default function Filter(props){
                 id="combo-box-demo"
                 options={props.products}
                 getOptionLabel={option => option.name}
+                renderOption={(props, option) => {
+                    return (
+                      <li {...props} key={option.id}>
+                        {option.name}
+                      </li>
+                    );
+                  }}
                 sx={{ width: 400 }}
                 onChange={(event, value) => {setAutocomplete(value, props.setSearchQuery)}}
                 renderInput={(params) => 
@@ -69,11 +76,11 @@ export default function Filter(props){
                 <p className="filter-text">Capacité</p> 
                 <div>
                     <input type="checkbox" id={64} name="64" onChange={(event) => setElement(event, props.capacity, props.setCapacity)}/>
-                    <label for="64">64 GO</label>
+                    <label htmlFor="64">64 GO</label>
                 </div>
                 <div>
                     <input type="checkbox" id={128} name="128" onChange={(event) => setElement(event, props.capacity, props.setCapacity)}/>
-                    <label for="128">128 GO</label>
+                    <label htmlFor="128">128 GO</label>
                 </div>
             </div>
         </div>

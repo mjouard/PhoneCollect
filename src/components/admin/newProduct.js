@@ -68,11 +68,11 @@ export default function NewProduct(props) {
                     <h1 style={{ textAlign: "center" }}> Nouveau produit </h1>
                     <div style={{ width: "80%", marginLeft: "auto", marginRight: "auto" }}>
                         <form onSubmit={handleSubmit}>
-                            <label for="pname">Nom du produit</label>
+                            <label htmlFor="pname">Nom du produit</label>
                             <input type="text" id="pname" name="product-name" placeholder="Iphone 11, ..." onChange={(e) => setName(e.target.value)} />
-                            <label for="price">Prix (euros)</label>
+                            <label htmlFor="price">Prix (euros)</label>
                             <input type="text" pattern="[0-9]*" id="price" name="product-price" placeholder="349" onChange={(e) => setPrice(e.target.value)} />
-                            <label for="type">Type de produit</label>
+                            <label htmlFor="type">Type de produit</label>
                             <select id="type" name="type" onChange={(e) => setType(e.target.value)}>
                                 {types.map(type => {
                                     return (
@@ -80,7 +80,7 @@ export default function NewProduct(props) {
                                     )
                                 })}
                             </select>
-                            <label for="capacity">Capacité</label>
+                            <label htmlFor="capacity">Capacité</label>
                             <select id="capacity" name="capacity" onChange={(e) => setCapacity(e.target.value)}>
                                 {capacities.map(capacity => {
                                     return (
@@ -88,9 +88,9 @@ export default function NewProduct(props) {
                                     )
                                 })}
                             </select>
-                            <label for="description">Description</label>
+                            <label htmlFor="description">Description</label>
                             <input type="text" id="description" name="description" onChange={(e) => setDescription(e.target.value)} placeholder="Samsung Galaxy S21 en état parfait, sans aucune rayure, ..." />
-                            <label for="file">Photos</label>
+                            <label htmlFor="file">Photos</label>
                             <input type='file' name='file' onChange={handleFileChange}></input>
                             <div style={{ width: "100%", textAlign: "center" }} >
                                 <input style={{ margin: "8px 0", borderRadius: "4px", width: "60%", backgroundColor: "white", height: "30px" }} type='submit' value="Ajouter le produit" />
