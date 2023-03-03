@@ -8,13 +8,16 @@ import constants from "../../utils/constants"
 import { getProduct } from "../../API/ProductsAPI"
 import Loader from "../common/loader"
 import DrawerAppBar from "../common/Navbar"
+import { BsInfoCircle } from "react-icons/bs"
 
 const static_host = constants.server_host + constants.static_files
+const info_text = "Tous les produits vendus sur Phone Collect proviennent de reconditionneurs experts et vérifiés, qui s'engagent à tester chaque appareil selon notre charte qualité. Chaque produit est 100% fonctionnel, parfaitement nettoyé et garanti."
 
-function addToCart(product, refresh, setRefresh) {
+function addToCart(product, refresh, setRefresh, fullAnimation) {
     if (!exists(product.id)) {
         add(product)
         setRefresh(!refresh)
+        fullAnimation();
     }
 }
 
@@ -40,6 +43,32 @@ export default function SingleProductPage(props) {
     }, [id]);
 
     const [refresh, setRefresh] = useState(exists(id))
+
+    function animateBounce(){
+        var cartContainer = document.getElementsByClassName("cart-icon-container");
+        if (cartContainer) {
+            cartContainer[0].classList.remove("bounce")
+            cartContainer[0].classList.add("bounce")
+            cartContainer[1].classList.remove("bounce")
+            cartContainer[1].classList.add("bounce")
+        }
+    }
+
+    function clearBounce(){
+        var cartContainer = document.getElementsByClassName("cart-icon-container");
+        if (cartContainer) {
+            cartContainer[0].classList.remove("bounce")
+            cartContainer[1].classList.remove("bounce")
+        }
+    }
+
+    function fullAnimation(){
+        animateBounce();
+        setTimeout(() => {
+            clearBounce();
+          }, "1000")
+    }
+    
     return (
         <div>
             <DrawerAppBar />
@@ -65,9 +94,10 @@ export default function SingleProductPage(props) {
                             </div>
                         </div>
                         <div className="single-product-description">
-                            {product.description}
+                            <BsInfoCircle style={{fontSize: "25px", marginRight: "10px"}} />
+                            {info_text}
                         </div>
-                        <button className="button-add-cart" onClick={() => addToCart(product, refresh, setRefresh)}>
+                        <button className="button-add-cart" onClick={() => addToCart(product, refresh, setRefresh, fullAnimation)}>
                             Ajouter au panier
                         </button>
                     </div>

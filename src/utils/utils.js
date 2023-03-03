@@ -17,7 +17,6 @@ export function clearCurrentUser(){
 
 export function start_animation_scale(className) {
     var list = document.getElementsByClassName(className);
-    console.log(className)
     var delay = 0;
 
     for (var i = 0; i < list.length; ++i) {

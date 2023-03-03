@@ -39,10 +39,12 @@ export default function CardOffCanvas() {
     }, [show]);
 
 
+
     return (
         <>
-            <div className='cart-icon-container' onClick={handleShow}>
+            <div id='cart-container' className='cart-icon-container' onClick={handleShow}>
                 <AiOutlineShoppingCart className='cart-icon' />
+                <p className='cart-icon-number'> {list().length} </p>
             </div>
             <Offcanvas placement='end' show={show} onHide={handleClose} style={{ width: "auto" }}>
                 <Offcanvas.Header closeButton>
